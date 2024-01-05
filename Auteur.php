@@ -53,13 +53,38 @@ class Auteur {
         $this->livres[] = $livre;
     }
 
+
     public function infosAuteur(){
-        echo "<h3>Livres de $this</h3>" . "<br>";
-        
+        $result = "<h3>Livres de " . $this . "</h3><ul>";
+    
         foreach ($this->livres as $livre) {
-            echo $livre->getInfos() . "<br>";
+            $result .= "<li>" . $livre->getInfos() . "</li>";
         }
+    
+        $result .= "</ul>";
+        return $result;
     }
+//
+// public function infosAuteur(){
+//     $result = "<h3>Livres de $this</h3>";
+//     $result .= "<ul>";
+    
+//     foreach ($this->livres as $livre) {
+//         $result .= "<li>" . $livre->getInfos() . "</li>";
+//     }
+
+//     $result .= "</ul>";
+//     return $result;
+// }
+
+// public function infosAuteur(){
+//     echo "<h3>Livres de $this</h3>" . "<br>";
+    
+//     foreach ($this->livres as $livre) {
+//         echo $livre->getInfos() . "<br>";
+// }
+//     }
+
 
     public function __toString(){
         return $this->getNom()." ".$this->getPrenom();

@@ -19,21 +19,24 @@ complète d’un auteur :</p>
 <?php
 
 spl_autoload_register(function () {
-    require('Livres.php');
+    require('Livre.php');
     require('Auteur.php');
 });
 
 
-$exAuteur = new Auteur("amine", "bncd");
+$exempleAuteur = new Auteur("amine", "bncd");
 
-$livreUn = new Livre("test", 2010, "20", 5.25, $exAuteur);
-$livreDeux = new Livre("testdeux", 2010, "20", 5.25, $exAuteur);
-$livreTrois = new Livre("testtrois", 2010, "20", 5.25, $exAuteur);
-$livreQuatre = new Livre("testquatre", 2010, "20", 5.25, $exAuteur);
+$livreUn = new Livre("test", 2010, "20", 5.25, $exempleAuteur);
+$livreDeux = new Livre("test deux", 2010, "20", 5.25, $exempleAuteur);
+$livreTrois = new Livre("test trois", 2010, "20", 5.25, $exempleAuteur);
+$livreQuatre = new Livre("test quatre", 2010, "20", 5.25, $exempleAuteur);
+
+echo $exempleAuteur->infosAuteur();
 
 
-$exAuteur->infosAuteur();
 
+
+echo "<br><br>";
 
 $stephenKing = new Auteur("Stephen", "King");
 
@@ -42,11 +45,7 @@ $livreSix = new Livre("Simetierre", 1983, "374", 15, $stephenKing);
 $livreSept = new Livre("Le Fléau", 1978, "823", 14, $stephenKing);
 $livreHuit = new Livre("Shining", 1977, "447", 16, $stephenKing);
 
-
-
-
-echo "<br><br>";
-$stephenKing->infosAuteur();
+echo $stephenKing->infosAuteur();
 
 
 

@@ -15,7 +15,7 @@ class Livre {
         $this->dateParution = new DateTime("$anneeParution-01-01");
         $this->prix = $prix;
         $this->auteur = $auteur;
-        $auteur->addLivre($this); // Correction : appel de la méthode addLivre pour ajouter ce livre à l'auteur
+        $auteur->addLivre($this); 
     }
     
     public function getTitre()
@@ -78,10 +78,12 @@ class Livre {
         return $this;
     }
 
-    public function getInfos(){
-        echo $this.": ".$this->getNombrePages()." pages / ".$this->getPrix()."€ ";
+   
+    public function getInfos(): string {
+        return $this . ": " . $this->getNombrePages() . " pages / " . $this->getPrix() . "€ ";
     }
     
+   
     public function __toString(){
         return $this->getTitre()." ( ".$this->getDateParution()->format('Y').")";   
     }
